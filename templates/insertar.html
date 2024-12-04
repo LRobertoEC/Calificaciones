@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/insertar.css') }}">
+    <title>Insertar calificación</title>
+</head>
+<body>
+
+    <!-- Menú de navegación (si lo deseas) -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/consultar">Consultar calificación</a></li>
+            <li><a href="/actualizar">Actualizar calificación</a></li>
+            <li><a href="/borrar">Eliminar calificación</a></li>
+        </ul>
+    </nav>
+
+    <div class="success-message" id="successMessage">
+        ¡Inserción exitosa!
+    </div>
+
+    <h1>Insertar calificación</h1>
+    
+    <!-- Formulario -->
+    <form action="/insertar" method="POST" id="insertForm">
+        <div class="form-row">
+            <label for="tipoLugar">Tipo de Lugar:</label>
+            <input type="text" id="tipoLugar" name="tipoLugar" required>
+        </div>
+
+        <div class="form-row">
+            <label for="nombreLugar">Nombre del Lugar:</label>
+            <input type="text" id="nombreLugar" name="nombreLugar" required>
+        </div>
+
+        <div class="form-row">
+            <label for="calificacionLugar">Calificación (0-5):</label>
+            <input type="number" id="calificacionLugar" name="calificacionLugar" min="0" max="5" required>
+        </div>
+
+        <div class="form-row">
+            <label for="resenaLugar">Reseña:</label>
+            <textarea id="resenaLugar" name="resenaLugar" required></textarea>
+        </div>
+
+        <div class="form-row">
+            <label for="ubicacionLugar">Ubicación:</label>
+            <input type="text" id="ubicacionLugar" name="ubicacionLugar" required>
+        </div>
+
+        <div class="form-row">
+            <input type="submit" value="Insertar Lugar">
+        </div>
+    </form>
+
+    <script>
+        // Mostrar el mensaje de éxito
+        var mensaje = "{{ mensaje }}";  // Esto recibe la variable mensaje desde Flask
+
+        if (mensaje) {
+            // Si el mensaje tiene valor (es decir, inserción exitosa), mostramos el mensaje de éxito
+            document.getElementById('successMessage').classList.add('active');
+        }
+    </script>
+</body>
+</html>

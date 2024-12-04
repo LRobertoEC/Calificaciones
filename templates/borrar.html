@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/borrar.css') }}">
+    <title>Eliminar Lugar</title>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/insertar">Insertar calificación</a></li>
+            <li><a href="/consultar">Consultar calificación</a></li>
+            <li><a href="/actualizar">Actualizar calificación</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h1>Eliminar Lugar</h1>
+
+        <form action="/borrar" method="POST">
+            <label for="idResena">ID de la calificación:</label>
+            <input type="number" id="idResena" name="idResena" min = "1" required><br><br>
+            <input type="submit" value="Eliminar Lugar">
+        </form>
+    </div>
+</body>
+</html>

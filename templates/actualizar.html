@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/actualizar.css') }}">
+    <title>Actualizar Lugar</title>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/insertar">Insertar calificación</a></li>
+            <li><a href="/consultar">Consultar calificación</a></li>
+            <li><a href="/borrar">Eliminar calificación</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h1>Actualizar Lugar</h1>
+        
+        {% if mensaje %}
+            <div id="successMessage" class="active">
+                {{ mensaje }}
+            </div>
+        {% endif %}
+
+        <form action="/actualizar" method="POST">
+            <label for="idLugar">ID de la calificación:</label>
+            <input type="number" id="idResena" name="idResena" required><br><br>
+
+            <label for="tipoLugar">Tipo de Lugar:</label><br>
+            <input type="text" id="tipoLugar" name="tipoLugar" required><br><br>
+
+            <label for="nombreLugar">Nombre del Lugar:</label><br>
+            <input type="text" id="nombreLugar" name="nombreLugar" required><br><br>
+
+            <label for="calificacionLugar">Calificación (0-5):</label><br>
+            <input type="number" id="calificacionLugar" name="calificacionLugar" min="0" max="5" required><br><br>
+
+            <label for="resenaLugar">Reseña:</label><br>
+            <textarea id="resenaLugar" name="resenaLugar" required></textarea><br><br>
+
+            <label for="ubicacionLugar">Ubicación:</label><br>
+            <input type="text" id="ubicacionLugar" name="ubicacionLugar" required><br><br>
+
+            <input type="submit" value="Actualizar Lugar">
+        </form>
+    </div>
+</body>
+</html>

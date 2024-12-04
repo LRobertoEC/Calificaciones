@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Lugares</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consultar.css') }}">
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/insertar">Insertar calificación</a></li>
+            <li><a href="/actualizar">Actualizar calificación</a></li>
+            <li><a href="/borrar">Eliminar calificación</a></li>
+        </ul>
+    </nav>
+    <h1>Consultar Lugares</h1>
+    <form action="/consultar" method="GET">
+        <label for="tipoLugar">Tipo de Lugar:</label><br>
+        <input type="text" id="tipoLugar" name="tipoLugar"><br><br>
+
+        <label for="calificacionLugar">Calificación (0-5):</label><br>
+        <input type="number" id="calificacionLugar" name="calificacionLugar" min="0" max="5"><br><br>
+
+        <input type="submit" value="Buscar">
+    </form>
+
+    <h2>Resultados:</h2>
+    <ul class="resultados">
+        {% for lugar in lugares %}
+        <li>Id: {{ lugar['idResena'] }}, {{ lugar['nombreLugar'] }} ({{ lugar['tipoLugar'] }}), Calificación: {{ lugar['calificacionLugar'] }}, Reseña: {{ lugar['resenaLugar'] }}, Ubicación: {{ lugar['ubicacionLugar'] }}</li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

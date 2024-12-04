@@ -1,0 +1,157 @@
+/* Estilo pagina de consulta */
+body {
+    font-family: Arial, sans-serif; /* Define la fuente principal de la página */
+    margin: 0; /* Elimina el margen externo del cuerpo */
+    padding: 0; /* Elimina el relleno interno del cuerpo */
+    background-color: #f4f4f4; /* Asigna un color de fondo claro */
+}
+
+h1, h2 {
+    text-align: center; /* Centra los encabezados horizontalmente */
+    color: #333; /* Define un color de texto gris oscuro */
+}
+
+/* Menú de navegación */
+nav {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Formulario */
+form {
+    max-width: 800px; /* Define el ancho máximo del formulario */
+    margin: 30px auto; /* Centra el formulario horizontalmente */
+    padding: 20px; /* Espaciado interno del formulario */
+    background-color: white; /* Fondo blanco para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del formulario */
+}
+
+.form-row {
+    display: flex; /* Usa flexbox para organizar elementos en fila */
+    justify-content: space-between; /* Separa los elementos de la fila uniformemente */
+    margin-bottom: 15px; /* Espaciado entre filas */
+}
+
+.form-row label {
+    width: 150px; /* Define un ancho fijo para las etiquetas */
+    font-weight: bold; /* Resalta las etiquetas en negrita */
+}
+
+.form-row input, .form-row textarea {
+    width: 70%; /* Ocupa el 70% del ancho del contenedor */
+    padding: 8px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de texto */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.form-row textarea {
+    resize: vertical; /* Permite redimensionar el área solo verticalmente */
+    height: 100px; /* Altura inicial del área de texto */
+}
+
+/* Botón de "Buscar" con el estilo verde fijo */
+form input[type="submit"] {
+    width: 100%; /* Botón ocupa todo el ancho del formulario */
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Texto en blanco */
+    font-size: 16px; /* Tamaño del texto */
+    border: none; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    padding: 12px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilo para los resultados de la consulta */
+h2 {
+    margin-top: 40px; /* Añade margen superior */
+    color: #333; /* Texto en gris oscuro */
+    text-align: center; /* Centra el texto */
+}
+
+ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno del contenedor de lista */
+    text-align: center; /* Centra los resultados de la lista */
+    margin: 20px 0; /* Añade margen superior e inferior */
+}
+
+ul li:hover {
+    background-color: #f1f1f1; /* Fondo gris más claro al pasar el cursor */
+}
+
+/* Mensaje de éxito (opcional, si decides usarlo) */
+#successMessage {
+    display: none; /* Oculta el mensaje por defecto */
+    background-color: #4CAF50; /* Fondo verde para éxito */
+    color: white; /* Texto en blanco */
+    padding: 10px; /* Espaciado interno */
+    margin: 20px 0; /* Margen superior e inferior */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+#successMessage.active {
+    display: block; /* Muestra el mensaje cuando tiene la clase 'active' */
+}
+
+/* Estilo específico para los resultados */
+ul.resultados {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px; /* Limitar el ancho */
+    text-align: left; /* Alinear a la izquierda */
+}
+
+ul.resultados li {
+    background-color: #fff; /* Fondo blanco */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 10px; /* Separación entre elementos */
+    border: 1px solid #ddd; /* Bordes grises claros */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+ul.resultados li:nth-child(even) {
+    background-color: #f9f9f9; /* Fondo gris claro en elementos pares */
+}
+
+ul.resultados li:hover {
+    background-color: #e6f7ff; /* Fondo azul claro al pasar el mouse */
+    cursor: pointer; /* Cambiar el cursor al pasar */
+}
+
+ul.resultados li {
+    text-align: center; /* Centra el texto de cada resultado */
+}
